@@ -1,0 +1,7 @@
+torch>=2.0.0
+snac
+datasets
+pyyaml
+tqdm
+orjson
+huggingface_hub
