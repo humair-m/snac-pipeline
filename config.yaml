@@ -1,0 +1,39 @@
+base_settings:
+  audio_codec: hubertsiuzdak/snac_24khz
+  num_readers: 8
+  qsize: 100000
+  OUT_DIR: shards 
+  gzip_level: 1
+  buffer_size: 16777216
+  lines_per_file: 50000
+  load_dataset_num_proc: 20
+
+save_settings:
+  local: train_dataset
+  hf_upload: hf_repo/dataset_name
+
+hf_datasets:
+
+  - name: hf_repo/dataset_name
+    sub_name: null
+    split: train
+    text_column_name: sentences
+    audio_column_name: audio
+    speaker_column_name: null
+    add_constant:
+      - key: speaker
+        value: kate
+      - key: lang
+        value: en
+
+  - name: hf_repo/dataset_name
+    sub_name: null
+    split: train
+    text_column_name: sentences
+    audio_column_name: audio
+    speaker_column_name: null
+    add_constant:
+      - key: speaker
+        value: simon
+      - key: lang
+        value: es
